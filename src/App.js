@@ -15,6 +15,7 @@ class App extends React.Component {
       rare: '',
       trunfo: '',
       button: true,
+      info: [],
     };
   }
 
@@ -44,6 +45,29 @@ class App extends React.Component {
     this.setState(({ [name]: value }), () => this.validacao());
   }
 
+  onSaveButtonClick = () => {
+    const { name,
+      description, attr1, attr2, attr3, image, rare } = this.state;
+    const objInfo = {
+      name,
+      description,
+      attr1,
+      attr2,
+      attr3,
+      image,
+      rare,
+    };
+
+    this.setState((param1) => ({ info: [...param1.info, objInfo] }));
+    this.setState({ name: '',
+      description: '',
+      attr1: 0,
+      attr2: 0,
+      attr3: 0,
+      image: '',
+      rare: 'normal' });
+  }
+
   render() {
     const {
       name,
@@ -60,7 +84,7 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ trunfo }
           onInputChange={ this.onInputChange }
-          // onSaveButtonClick={this.validacao}
+          onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ button }
         />
         <Card

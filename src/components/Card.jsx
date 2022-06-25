@@ -35,6 +35,6 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardName: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
+  cardTrunfo: PropTypes.string.isRequired,
 };
 export default Card;
