@@ -93,7 +93,7 @@ class Form extends React.Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        {hasTrunfo ? (
+        {hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : (
           <label htmlFor="trunfo-input">
             <input
               type="checkbox"
@@ -103,7 +103,7 @@ class Form extends React.Component {
               checked={ cardTrunfo }
               onChange={ onInputChange }
             />
-          </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>}
+          </label>)}
         <button
           type="button"
           data-testid="save-button"

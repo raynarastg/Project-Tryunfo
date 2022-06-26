@@ -16,7 +16,7 @@ class App extends React.Component {
       trunfo: '',
       button: true,
       info: [],
-      hasTrunfo: true,
+      hasTrunfo: false,
     };
   }
 
@@ -73,7 +73,7 @@ class App extends React.Component {
       attr3: 0,
       image: '',
       rare: 'normal',
-      hasTrunfo: this.hasTrunfo(),
+      hasTrunfo: !this.hasTrunfo(),
     });
   }
 
@@ -81,7 +81,7 @@ class App extends React.Component {
     this.setState((estadoAnterior) => ({
       info: estadoAnterior.info.filter((el) => el.name !== param),
     }), () => {
-      this.setState({ hasTrunfo: !this.hasTrunfo() });
+      this.setState({ hasTrunfo: this.hasTrunfo() });
     });
   }
 
