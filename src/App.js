@@ -16,6 +16,7 @@ class App extends React.Component {
       trunfo: '',
       button: true,
       info: [],
+      hasTrunfo: true,
     };
   }
 
@@ -45,9 +46,14 @@ class App extends React.Component {
     this.setState(({ [name]: value }), () => this.validacao());
   }
 
+  hasTrunfo = () => {
+    const { info } = this.state;
+    return info.some((el) => el.trunfo);
+  }
+
   onSaveButtonClick = () => {
     const { name,
-      description, attr1, attr2, attr3, image, rare } = this.state;
+      description, attr1, attr2, attr3, image, rare, trunfo } = this.state;
     const objInfo = {
       name,
       description,
@@ -56,6 +62,7 @@ class App extends React.Component {
       attr3,
       image,
       rare,
+      trunfo,
     };
 
     this.setState((param1) => ({ info: [...param1.info, objInfo] }));
@@ -65,13 +72,18 @@ class App extends React.Component {
       attr2: 0,
       attr3: 0,
       image: '',
-      rare: 'normal' });
+      rare: 'normal',
+      hasTrunfo: this.hasTrunfo(),
+    });
   }
 
   render() {
     const {
       name,
-      description, attr1, attr2, attr3, image, rare, trunfo, button } = this.state;
+      description,
+      attr1,
+      attr2,
+      attr3, image, rare, trunfo, button, hasTrunfo } = this.state;
     return (
       <div>
         <Form
@@ -83,6 +95,7 @@ class App extends React.Component {
           cardImage={ image }
           cardRare={ rare }
           cardTrunfo={ trunfo }
+          hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ button }
