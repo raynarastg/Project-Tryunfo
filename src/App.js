@@ -83,7 +83,7 @@ class App extends React.Component {
       description,
       attr1,
       attr2,
-      attr3, image, rare, trunfo, button, hasTrunfo } = this.state;
+      attr3, image, rare, trunfo, button, hasTrunfo, info } = this.state;
     return (
       <div>
         <Form
@@ -110,6 +110,17 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ trunfo }
         />
+        { info.map((el) => (<Card
+          key={ el.name }
+          cardName={ el.name }
+          cardDescription={ el.description }
+          cardAttr1={ el.attr1 }
+          cardAttr2={ el.attr2 }
+          cardAttr3={ el.attr3 }
+          cardImage={ el.image }
+          cardRare={ el.rare }
+          cardTrunfo={ el.trunfo }
+        />))}
       </div>
     );
   }
