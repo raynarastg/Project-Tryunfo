@@ -77,6 +77,14 @@ class App extends React.Component {
     });
   }
 
+  deleteButton = (param) => {
+    this.setState((estadoAnterior) => ({
+      info: estadoAnterior.info.filter((el) => el.name !== param),
+    }), () => {
+      this.setState({ hasTrunfo: !this.hasTrunfo() });
+    });
+  }
+
   render() {
     const {
       name,
@@ -110,17 +118,31 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ trunfo }
         />
-        { info.map((el) => (<Card
-          key={ el.name }
-          cardName={ el.name }
-          cardDescription={ el.description }
-          cardAttr1={ el.attr1 }
-          cardAttr2={ el.attr2 }
-          cardAttr3={ el.attr3 }
-          cardImage={ el.image }
-          cardRare={ el.rare }
-          cardTrunfo={ el.trunfo }
-        />))}
+        <div>
+          {info.map((el) => (
+            <div key={ el.name }>
+              <Card
+                cardName={ el.name }
+                cardDescription={ el.description }
+                cardAttr1={ el.attr1 }
+                cardAttr2={ el.attr2 }
+                cardAttr3={ el.attr3 }
+                cardImage={ el.image }
+                cardRare={ el.rare }
+                cardTrunfo={ el.trunfo }
+              />
+              <button
+                type="button"
+                data-testid="delete-button"
+                onClick={ () => this.deleteButton(el.name) }
+              >
+                Excluir
+
+              </button>
+
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
