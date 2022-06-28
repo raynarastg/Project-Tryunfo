@@ -20,6 +20,7 @@ class Form extends React.Component {
     return (
       <form>
         <label htmlFor="name-input">
+          Nome
           <input
             type="text"
             data-testid="name-input"
@@ -30,6 +31,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="description-input">
+          Descrição
           <input
             type="textarea"
             data-testid="description-input"
@@ -40,6 +42,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
+          Attr01
           <input
             type="number"
             data-testid="attr1-input"
@@ -50,6 +53,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr2-input">
+          Attr02
           <input
             type="number"
             data-testid="attr2-input"
@@ -60,6 +64,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr3-input">
+          Attr03
           <input
             type="number"
             data-testid="attr3-input"
@@ -70,6 +75,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="image-input">
+          Imagem
           <input
             type="text"
             data-testid="image-input"
@@ -80,6 +86,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="rare-input">
+          Raridade
           <select
             type="select"
             data-testid="rare-input"
@@ -95,6 +102,7 @@ class Form extends React.Component {
         </label>
         {hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : (
           <label htmlFor="trunfo-input">
+            Super Trunfo
             <input
               type="checkbox"
               data-testid="trunfo-input"
@@ -119,14 +127,14 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.number.isRequired,
+  cardAttr2: PropTypes.number.isRequired,
+  cardAttr3: PropTypes.number.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardName: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
+  cardTrunfo: PropTypes.string.isRequired,
   hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,

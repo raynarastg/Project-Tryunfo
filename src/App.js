@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import FilterName from './components/FilterName';
+import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +19,7 @@ class App extends React.Component {
       button: true,
       info: [],
       hasTrunfo: false,
+      filter: [],
     };
   }
 
@@ -66,6 +69,7 @@ class App extends React.Component {
     };
 
     this.setState((param1) => ({ info: [...param1.info, objInfo] }));
+    this.setState((param1) => ({ filter: [...param1.filter, objInfo] }));
     this.setState({ name: '',
       description: '',
       attr1: 0,
@@ -81,9 +85,17 @@ class App extends React.Component {
     this.setState((estadoAnterior) => ({
       info: estadoAnterior.info.filter((el) => el.name !== param),
     }), () => {
+      // const { info } = this.state;
+      // this.setState({ filter: info });
       this.setState({ hasTrunfo: this.hasTrunfo() });
     });
   }
+
+  nameFilter = ({ target }) => {
+    const { value } = target;
+    this.setState((estadoAnterior) => ({
+      info: estadoAnterior.info.filter((el) => el.name.includes(value)) }));
+  };
 
   render() {
     const {
@@ -117,6 +129,9 @@ class App extends React.Component {
           cardImage={ image }
           cardRare={ rare }
           cardTrunfo={ trunfo }
+        />
+        <FilterName
+          onInputChange={ this.nameFilter }
         />
         <div>
           {info.map((el) => (
