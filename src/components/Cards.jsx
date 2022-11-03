@@ -13,45 +13,43 @@ class Card extends React.Component {
       cardRare,
       cardTrunfo } = this.props;
 
-    const cardNameFormatted = cardName ? (cardName.split('').join('.')) : '';
     return (
-      <div className="borderCard">
-        <div data-testid="name-card" className="name name-review">
-          {cardNameFormatted.toUpperCase()}
+      <div className="card-content">
+        <div data-testid="name-card" className="name">
+
+          {cardName}
         </div>
-        {cardImage ? (<img
+        <img
           src={ cardImage }
           alt={ cardName }
           data-testid="image-card"
-          className="image-preview"
-        />) : ''}
+        />
         <div data-testid="description-card">
 
           {cardDescription}
         </div>
-        <div className="phrase-preview">
+        <div className="phrase">
           { cardPhrases }
         </div>
-        <div className="atributo">
+        <div className="atributos">
           <div data-testid="attr1-card">
-            <strong>
-              Funny:
+            <p>
+              <strong>Funny:</strong>
+
               {cardAttr1}
-            </strong>
+            </p>
           </div>
           <div data-testid="attr2-card">
-            <strong>
-              Beauty:
+            <p>
+              <strong>Beauty:</strong>
               {cardAttr2}
-            </strong>
-
+            </p>
           </div>
           <div data-testid="attr3-card">
-            <strong>
-              Friendship:
+            <p>
+              <strong>Friendship:</strong>
               {cardAttr3}
-            </strong>
-
+            </p>
           </div>
           <div data-testid="rare-card" className="rare-card">
             {cardRare}

@@ -6,6 +6,7 @@ class Form extends React.Component {
     const {
       cardName,
       cardDescription,
+      cardPhrases,
       cardAttr1,
       cardAttr2,
       cardAttr3,
@@ -41,8 +42,18 @@ class Form extends React.Component {
             onChange={ onInputChange }
           />
         </label>
+        <label htmlFor="phrase-input">
+          Frase
+          <input
+            type="textarea"
+            name="phrase"
+            id="phrase-input"
+            value={ cardPhrases }
+            onChange={ onInputChange }
+          />
+        </label>
         <label htmlFor="attr1-input">
-          Attr01
+          Funny
           <input
             type="number"
             data-testid="attr1-input"
@@ -53,7 +64,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr2-input">
-          Attr02
+          Beauty
           <input
             type="number"
             data-testid="attr2-input"
@@ -64,7 +75,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr3-input">
-          Attr03
+          Friendship
           <input
             type="number"
             data-testid="attr3-input"
@@ -127,9 +138,10 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  cardAttr1: PropTypes.number.isRequired,
-  cardAttr2: PropTypes.number.isRequired,
-  cardAttr3: PropTypes.number.isRequired,
+  cardAttr1: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  cardAttr2: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  cardAttr3: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  cardPhrases: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardName: PropTypes.string.isRequired,

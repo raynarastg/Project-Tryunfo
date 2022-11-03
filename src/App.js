@@ -2,7 +2,11 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import FilterName from './components/FilterName';
+import FilterRaridade from './components/FilterRaridade';
 import './App.css';
+import data from './data';
+import Cards from './components/Cards';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   constructor() {
@@ -10,6 +14,7 @@ class App extends React.Component {
     this.state = {
       name: '',
       description: '',
+      phrase: '',
       attr1: '',
       attr2: '',
       attr3: '',
@@ -20,6 +25,7 @@ class App extends React.Component {
       info: [],
       hasTrunfo: false,
       filter: [],
+      filterRare: 'todas',
     };
   }
 
@@ -70,6 +76,7 @@ class App extends React.Component {
 
     this.setState((param1) => ({ info: [...param1.info, objInfo] }));
     this.setState((param1) => ({ filter: [...param1.filter, objInfo] }));
+    this.setState((param1) => ({ filterRare: [...param1.filterRare, objInfo] }));
     this.setState({ name: '',
       description: '',
       attr1: 0,
@@ -97,67 +104,86 @@ class App extends React.Component {
       info: estadoAnterior.info.filter((el) => el.name.includes(value)) }));
   };
 
+  rareFilter = ({ target }) => {
+    const { rare } = target;
+    this.setState((estadoAnterior) => ({
+      info: estadoAnterior.info.filter((el) => el.rare.includes(rare)) }));
+  };
+
   render() {
     const {
       name,
       description,
       attr1,
       attr2,
-      attr3, image, rare, trunfo, button, hasTrunfo, info } = this.state;
+      attr3, image, rare, trunfo, button, hasTrunfo, phrase } = this.state;
     return (
-      <div>
-        <Form
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rare }
-          cardTrunfo={ trunfo }
-          hasTrunfo={ hasTrunfo }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          isSaveButtonDisabled={ button }
-        />
-        <Card
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rare }
-          cardTrunfo={ trunfo }
-        />
-        <FilterName
-          onInputChange={ this.nameFilter }
-        />
-        <div>
-          {info.map((el) => (
-            <div key={ el.name }>
-              <Card
-                cardName={ el.name }
-                cardDescription={ el.description }
-                cardAttr1={ el.attr1 }
-                cardAttr2={ el.attr2 }
-                cardAttr3={ el.attr3 }
-                cardImage={ el.image }
-                cardRare={ el.rare }
-                cardTrunfo={ el.trunfo }
-              />
-              <button
-                type="button"
-                data-testid="delete-button"
-                onClick={ () => this.deleteButton(el.name) }
-              >
-                Excluir
+      <div className="infos">
+        <h1>T.R.Y.U.N.F.O</h1>
+        <div className="inputsInfo">
+          <Form
+            cardName={ name }
+            cardDescription={ description }
+            cardPhrases={ phrase }
+            cardAttr1={ attr1 }
+            cardAttr2={ attr2 }
+            cardAttr3={ attr3 }
+            cardImage={ image }
+            cardRare={ rare }
+            cardTrunfo={ trunfo }
+            hasTrunfo={ hasTrunfo }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+            isSaveButtonDisabled={ button }
+          />
+          <Card
+            cardName={ name }
+            cardDescription={ description }
+            cardPhrases={ phrase }
+            cardAttr1={ attr1 }
+            cardAttr2={ attr2 }
+            cardAttr3={ attr3 }
+            cardImage={ image }
+            cardRare={ rare }
+            cardTrunfo={ trunfo }
+          />
+          <FilterName
+            onInputChange={ this.nameFilter }
+          />
+          <FilterRaridade
+            onInputChange={ this.rareFilter }
+          />
+        </div>
+        <div className="cards">
+          {data.map((el) => (
+            <div key={ el.name } className="emVolta">
+              <div className="card">
+                <Cards
+                  cardName={ el.name }
+                  cardDescription={ el.description }
+                  cardPhrases={ el.phrase }
+                  cardAttr1={ el.funny }
+                  cardAttr2={ el.beauty }
+                  cardAttr3={ el.friendship }
+                  cardImage={ el.image }
+                  cardRare={ el.rare }
+                  cardTrunfo={ el.trunfo }
+                />
+                <div className="button">
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ () => this.deleteButton(el.name) }
+                  >
+                    Excluir
 
-              </button>
-
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     );
   }
