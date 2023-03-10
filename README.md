@@ -18,12 +18,6 @@ Visualizar uma tabelas com seus gastos;
 
 Visualizar o total de gastos convertidos para uma moeda de escolha;
 
- Tecnologias Utilizadas:
-- CSS
-- JavaScript
-- React.js
-- React Router
-- Redux
 
 # Instalação
 
