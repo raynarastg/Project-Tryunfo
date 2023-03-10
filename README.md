@@ -1,4 +1,4 @@
-# :construction: README em construção ! :construction:
+<!-- # :construction: README em construção ! :construction: -->
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
@@ -37,9 +37,13 @@ A partir daí, você pode criar novas cartas usando o formulário e listar as ca
 Se você deseja contribuir para o projeto, pode seguir estas etapas:
 
 Faça o fork do repositório.
+
 Crie um branch com a sua contribuição: git checkout -b minha-contribuicao.
+
 Faça as mudanças desejadas e commit: git commit -m "Minha contribuição".
+
 Envie para o seu branch: git push origin minha-contribuicao.
+
 Abra um pull request no repositório original.
 
 
