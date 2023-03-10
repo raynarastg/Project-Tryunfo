@@ -17,16 +17,14 @@ O Tryunfo é um jogo no estilo Super Trunfo, em que é possível criar novas car
 
 Para instalar as dependências, execute o seguinte comando no terminal:
 
-Copy code
 npm install
 
 # Uso
 
 Para iniciar o projeto, execute o seguinte comando no terminal:
 
-sql
-Copy code
 npm start
+
 Isso iniciará a aplicação em modo de desenvolvimento. Abra http://localhost:3000 para visualizá-la no navegador.
 
 A partir daí, você pode criar novas cartas usando o formulário e listar as cartas existentes no baralho.
