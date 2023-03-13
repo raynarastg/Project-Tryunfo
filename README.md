@@ -22,9 +22,9 @@ Visualizar o total de gastos convertidos para uma moeda de escolha;
 # Instalação
 
 Para instalar as dependências, execute o seguinte comando no terminal:
-´´´bash
+
 npm install
-´´´
+
 # Uso
 
 Para iniciar o projeto, execute o seguinte comando no terminal:
