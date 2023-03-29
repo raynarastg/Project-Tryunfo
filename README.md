@@ -10,13 +10,7 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 -->
 # TRYUNFO
 
-O Tryunfo é um jogo no estilo Super Trunfo, em que é possível criar novas cartas e listar as cartas já existentes no baralho. A aplicação foi desenvolvida em React com Redux e conceitos fundamentais de gerenciamento de estado, possibilitando o usuário:
-
-Adicionar, remover e editar um gasto;
-
-Visualizar uma tabelas com seus gastos;
-
-Visualizar o total de gastos convertidos para uma moeda de escolha;
+O Tryunfo é um jogo no estilo Super Trunfo, em que é possível criar novas cartas e listar as cartas já existentes no baralho. 
 
 
 # Instalação
