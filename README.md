@@ -1,50 +1,53 @@
-<!-- # :construction: README em construção ! :construction: -->
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
-# TRYUNFO
+# Wallet
 
-O Tryunfo é um jogo no estilo Super Trunfo, em que é possível criar novas cartas e listar as cartas já existentes no baralho. 
+<details>
+  <summary><strong>👨‍💻 O que foi desenvolvido nesse projeto</strong></summary><br />
 
+ Neste projeto foi desenvolvido um jogo no estilo Super Trunfo! Ao utilizar essa aplicação a pessoa usuária deverá ser capaz de:
 
-# Instalação
+  - Criar um baralho com o tema livre;
 
-Para instalar as dependências, execute o seguinte comando no terminal:
+  - Adicionar e remover uma carta do baralho;
 
-npm install
+  - Visualizar todas as cartas que foram adicionadas ao baralho;
 
-# Uso
+  - Jogar com o baralho criado.
 
-Para iniciar o projeto, execute o seguinte comando no terminal:
+</details>
 
-npm start
+<details>
+  <summary><strong>💫 Habilidades</strong></summary><br />
 
-Isso iniciará a aplicação em modo de desenvolvimento. Abra http://localhost:3000 para visualizá-la no navegador.
+Neste projeto foi aplicado os seguintes conceitos:
 
-A partir daí, você pode criar novas cartas usando o formulário e listar as cartas existentes no baralho.
+  - Ler o estado de um componente e usá-lo para alterar o que exibimos no browser
 
+  - Inicializar um componente, dando a ele um estado pré-definido
 
-# Contribuindo
+  - Atualizar o estado de um componente
 
-Se você deseja contribuir para o projeto, pode seguir estas etapas:
+  - Capturar eventos utilizando a sintaxe do React
 
-Faça o fork do repositório.
+  - Criar formulários utilizando sintaxe JSX com as tags: `input`, `textarea`, `select`, `form`, `checkbox`
 
-Crie um branch com a sua contribuição: git checkout -b minha-contribuicao.
-
-Faça as mudanças desejadas e commit: git commit -m "Minha contribuição".
-
-Envie para o seu branch: git push origin minha-contribuicao.
-
-Abra um pull request no repositório original.
+  - Transmitir informações de componentes filhos para componentes pais via callbacks
+  
+</details>
 
 
-# Autor
+## Clone o projeto
 
-O Tryunfo foi desenvolvido por Raynara Santiago durante o curso da Trybe.
+- Use o comando: `git clone git@github.com:raynarastg/Project-Tryunfo.git`.
+- Entre na pasta do repositório que você acabou de clonar:
+  - `cd Project-Tryunfo`
+
+1. Instale as dependências
+
+- `npm install`
+
+2. Veja a aplicação no browser
+
+- `npm start`
+
+
+</details><br />
