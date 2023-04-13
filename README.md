@@ -1,4 +1,4 @@
-# Wallet
+# Tryunfo
 
 <details>
   <summary><strong>👨‍💻 O que foi desenvolvido nesse projeto</strong></summary><br />
